@@ -1,0 +1,23 @@
+C++：
+#include <stdio.h>
+
+int main(){
+	printf("hello C++");
+	return 0;
+}
+
+C：
+#include <stdio.h>
+
+int main(){
+	printf("hello CCCC");
+	return 0;
+}
+
+java：
+public class test {
+    public static void main(String[] args)
+    {
+        System.out.println("Hello Java!!!!!!!!");
+    }
+}

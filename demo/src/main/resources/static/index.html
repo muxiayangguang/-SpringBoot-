@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" type="text/css" href="question.css">
+
+    <script src="jquery.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $.ajax({
+                    type:"POST",
+                    url:"/hello",
+                    data:{"a":23},
+                    success:function(result){
+
+                    }
+                });
+            });
+        });
+
+        $(document).ready(function(){
+            $("#bk").click(function(){
+                $("#dt").addClass("hid");
+                $("#ttl").removeClass("hid");
+            });
+        });
+
+        $(document).ready(function(){
+            var uu=document.getElementById("ttl");
+            var i;
+            var lis;
+            for(i=1;i<21;i++){
+                lis=document.createElement("li");
+                lis.innerHTML="题目"+ i;
+                lis.className="t";
+                uu.append(lis);
+                lis.addEventListener("click",function(){
+                    $.ajax({         //查询题目
+                        type:"POST",
+                        url:"/question",           //题目查询网站
+                        data:{"id":$(this).text().substring(3,$(this).text().length-1)},
+                        success:function(result){
+                            $("#ttl").addClass("hid");
+                            $("#dt").removeClass("hid");
+                            $("#dt").children("p").text(result);
+                        }
+                    });
+                });
+            }
+        });
+
+        $(document).ready(function(){
+            $("#sb").click(function(){
+
+                $.ajax({
+                    type:"POST",            //提交代码,file_t为文件后缀名,file_c为代码内容,stdin为输入
+                    url:"/result",           //代码提交网站
+                    data:{"language":escape($("#lg").val()),
+                            "code":escape($("#code_area").val()),
+                            "input":escape($("#sti").val())},
+                    success:function(result){
+                        $("#sto").text(result);
+                    }
+                });
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+
+<div>
+    <div id="question">
+        <ul id="ttl">
+
+        </ul>
+        <div id="dt" class="hid">
+            <button id="bk">返回</button>
+            <p></p>
+        </div>
+
+    </div>
+    <div id="coding">
+        <div class="fm">
+            <form action="" method="post" target="the_iframe">
+                <select id="lg">
+                    <option value="cpp">C++</option>
+                    <option value="c">C</option>
+                    <option value="java">Java</option>
+                </select>
+                <button id="sb">提交</button>
+            </form>
+
+            <textarea id="code_area" rows="20" cols="122"></textarea>
+
+        </div>
+        <div>输入：</div>
+        <textarea id="sti" rows="2" cols="122"></textarea>
+    </div>
+
+</div>
+<div>
+        <textarea id="sto" rows="10" cols="180" readonly>（输出）</textarea>
+</div>
+
+<iframe id="is_iframe" name="the_iframe" style="display:none;"></iframe>
+
+</body>
+</html>

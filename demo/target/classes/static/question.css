@@ -1,0 +1,186 @@
+
+body
+{
+    background-color: rgb(202,202,202);
+    background-image: url("bg2.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+
+#question
+{
+    overflow:auto;
+    background-color: rgba(0,255,255,0.2);
+    display:inline-block;
+    vertical-align:top;
+    width:400px;
+    height:430px;
+}
+
+#code_area
+{
+    display: inline-block;
+    overflow: auto;
+}
+
+#dt
+{
+    text-decoration-color: lightgreen;
+}
+
+ul
+{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+}
+
+
+li
+{
+    display:block;
+    background: transparent;
+    color:red;
+    padding: 8px 16px;
+    text-decoration:none;
+}
+
+li:hover
+{
+    background-color:green;
+    opacity: 0.5;
+}
+
+textarea
+{
+    opacity: 0.7;
+    margin: 5px 0px 10px 10px;
+}
+
+#coding
+{
+    width:50%;
+    padding:0;
+    margin:0;
+    height:70%;
+    display:inline-block;
+    vertical-align: top;
+}
+
+#bk
+{
+    width:100%;
+    padding:8px;
+    background-color: #428bca;
+    border-color: #357ebd;
+    color: #fff;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px; /* for old Konqueror browsers */
+    text-align: center;
+    vertical-align: middle;
+    border:solid 10px;
+    border-color: #4d4e53;
+    border-radius:10px 40px 40px 10px;
+    font-weight: 900;
+    font-size:125%;
+
+}
+
+#details
+{
+    width:100%;
+    height:100%;
+}
+
+#sb
+{
+    width:90%;
+    float: right;
+    background: #eb94d0;
+    /* 创建渐变 */
+    background-image: -webkit-linear-gradient(top, #eb94d0, #2079b0);
+    background-image: -moz-linear-gradient(top, #eb94d0, #2079b0);
+    background-image: -ms-linear-gradient(top, #eb94d0, #2079b0);
+    background-image: -o-linear-gradient(top, #eb94d0, #2079b0);
+    background-image: linear-gradient(to bottom, #eb94d0, #2079b0);
+    /* 给按钮添加圆角 */
+    -webkit-border-radius: 28px;
+    -moz-border-radius: 28px;
+    border-radius: 28px;
+    text-shadow: 3px 2px 1px #9daef5;
+    -webkit-box-shadow: 6px 5px 24px #666666;
+    -moz-box-shadow: 6px 5px 24px #666666;
+    box-shadow: 6px 5px 24px #666666;
+    font-family: Arial;
+    color: #fafafa;
+    font-size: 16px;
+    padding: 9px;
+    text-decoration: none;
+}
+
+#sb:hover {
+    background: #2079b0;
+    background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
+    background-image: -moz-linear-gradient(top, #2079b0, #eb94d0);
+    background-image: -ms-linear-gradient(top, #2079b0, #eb94d0);
+    background-image: -o-linear-gradient(top, #2079b0, #eb94d0);
+    background-image: linear-gradient(to bottom, #2079b0, #eb94d0);
+    text-decoration: none;
+}
+
+#lg
+{
+    font-size: 120%;
+}
+
+.fm
+{
+    display: inline-block;
+}
+
+.hid
+{
+    display:none;
+}
+
+#sti{
+    display: inline-block;
+}
+
+
+
+
+
+
+::-webkit-scrollbar {/*滚动条整体样式*/
+
+    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+
+    height: 1px;
+
+}
+
+::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+
+    border-radius: 10px;
+
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+
+    background: #535353;
+
+}
+
+::-webkit-scrollbar-track {/*滚动条里面轨道*/
+
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+
+    border-radius: 10px;
+
+    background: #EDEDED;
+
+}
